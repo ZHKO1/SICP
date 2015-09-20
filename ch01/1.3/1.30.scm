@@ -1,4 +1,4 @@
-(load "SICP/1.3/ex_sum.scm")
+(load "SICP/ch01/1.3/ex_sum.scm")
 
 (define (sum term a next b)
   (define (iter a result)

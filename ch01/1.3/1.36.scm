@@ -1,4 +1,4 @@
-(load "SICP/1.3/ex_1.3.3.scm")
+(load "SICP/ch01/1.3/ex_1.3.3.scm")
 
 (define (fixed-point f first-guess tolerance)
   (define (close-enouge? x y)

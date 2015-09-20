@@ -1,4 +1,4 @@
-(load "SICP/1.3/1.37.scm")
+(load "SICP/ch01/1.3/1.37.scm")
 
 (define (tan-cf x step)
         (exact->inexact (cont-frac  (lambda (i) (if (= i 1)

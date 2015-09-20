@@ -1,4 +1,4 @@
-(load "SICP/1.3/ex_1.3.3.scm")
+(load "SICP/ch01/1.3/ex_1.3.3.scm")
 
 ;更加简洁漂亮的解法
 (define (cont-frac n d k)
