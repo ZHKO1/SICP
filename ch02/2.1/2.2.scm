@@ -34,10 +34,10 @@
     (make-point (/ (+ x1 x2) 2) (/ (+ y1 y2) 2))))
 
 
-(define x (make-point 2 3))
+;(define x (make-point 2 3))
 
-(define y (make-point 1 3))
+;(define y (make-point 1 3))
 
-(define z (make-segment x y))
+;(define z (make-segment x y))
 
-(midpoint-segment z)
+;(midpoint-segment z)
