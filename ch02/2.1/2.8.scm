@@ -4,4 +4,4 @@
   (make-interval  (- (lower-bound x) (upper-bound y))
                   (- (upper-bound x) (lower-bound y))))
 
-(sub-interval x y)
+;(sub-interval x y)

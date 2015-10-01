@@ -23,8 +23,8 @@
                                  (/ 1.0 (lower-bound y)))))
 
 
-(define x (make-interval 1 2))
-(define y (make-interval 3 5))
+;(define x (make-interval 1 2))
+;(define y (make-interval 3 5))
 
 ;(add-interval x y)
 ;(mul-interval x y)
