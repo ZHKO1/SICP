@@ -28,3 +28,17 @@
   (if (null? list1)
       list2
       (cons (car list1) (append (cdr list1) list2))))
+
+;P70
+;这里的抽象还仅仅是对于每个item施行pro参数而已
+(define (scale-list items facter)
+  (if (null? items)
+      '()
+      (cons (* (car items) facter) (scale-list (cdr items) facter))))
+
+(define (map proc items)
+  (if (null? items)
+      '()
+      (cons (proc (car items))
+            (map proc (cdr items)))))
+

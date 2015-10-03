@@ -21,7 +21,7 @@
 (define (same-parity . x)
   (define (out-list items odd?)
     (if (null? items)
-      (cdr (list 1))
+      '()
       (let ((item  (car items)))
         (cond ((= (remainder item 2) odd?)
                 (cons item (out-list (cdr items) odd?)))
