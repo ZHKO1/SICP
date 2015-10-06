@@ -1,0 +1,5 @@
+(define (subsets s)
+  (if (null? s)
+      (list '())
+      (let ((reset (subsets (cdr s))))
+        (append reset (map (lambda (x) (append (list (car s)) x)) reset)))))
