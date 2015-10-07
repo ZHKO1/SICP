@@ -1,6 +1,5 @@
 (load "SICP/ch02/2.2/ex_2.2.3.scm")
 
-
 (define (accumulate op initial sequence)
   (if (null? sequence)
       initial
