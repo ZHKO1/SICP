@@ -95,3 +95,22 @@
     ))
 
 ;不愧是SICP 抽象思维玩得飞起
+
+;这里是将seq的每一个元素都给用proc过程处理一下 然后再用append作积累
+(define (flatmap proc seq)
+  (accumulate append '() (map proc seq)))
+
+;从数组里删除元素
+(define (remove item sequence)
+  (filter (lambda (x) (not (= item x))) sequence)
+  )
+
+;给出一个数组的所有排列
+(define (permutations s)
+  (if (null? s)
+      (list '())
+      (flatmap (lambda (x)
+                  (map (lambda (p) (cons x p)) (permutations (remove x s))))
+               s)))
+
+
