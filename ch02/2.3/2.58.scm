@@ -83,7 +83,6 @@
         ((=number? a2 0) a1)
         ((and (number? a1) (number? a2)) (+ a1 a2))
         ;我觉得有必要考虑到a2已经是(+ a3 a4)的形式
-        ((sum? a2) (append (list a1 '+) a2))
         (else (append (list a1 '+) a2))))
 
 (define (make-product m1 m2)
