@@ -1,0 +1,30 @@
+(load "2.56.scm")
+
+(define (augend s)
+  (let ((item (cddr s)))
+    (if (> (length item) 1)
+        (cons '+ item)
+        (caddr s))))
+
+(define (make-sum a1 a2)
+  (cond ((=number? a1 0) a2)
+        ((=number? a2 0) a1)
+        ((and (number? a1) (number? a2)) (+ a1 a2))
+        ;我觉得有必要考虑到a2已经是(+ a3 a4)的形式
+        ((sum? a2) (append (list '+ a1) (cdr a2)))
+        (else (list '+ a1 a2))))
+
+(define (multiplicand p)
+  (let ((item (cddr p)))
+    (if (> (length item) 1)
+        (cons '* item)
+        (caddr p))))
+
+(define (make-product m1 m2)
+  (cond ((or (=number? m1 0) (=number? m2 0)) 0)
+        ((=number? m1 1) m2)
+        ((=number? m2 1) m1)
+        ((and (number? m1) (number? m2)) (* m1 m2))
+        ((product? m2) (append (list '* m1) (cdr m2)))
+        (else (list '* m1 m2))
+      ))
