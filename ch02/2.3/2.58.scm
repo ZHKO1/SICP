@@ -38,7 +38,7 @@
 (define (find item items)
   (define (findnext items number)
     (cond ((null? items) -1)
-          ((eq? (car items) item) number)
+          ((equal? (car items) item) number)
           (else (findnext (cdr items) (+ number 1)))
         ))
   (findnext items 0))
@@ -57,7 +57,6 @@
 
 (define (sum? x)
   (and (pair? x) (>= (find '+ x) 0)))
-;我刚刚想到可以用map来解决 生下来的回家再搞 eq？
 
 (define (product? x)
   (and (pair? x) (not (sum? x)) (>= (find '* x) 0)))
@@ -77,12 +76,10 @@
         item
         (caddr p))))
 
-
 (define (make-sum a1 a2)
   (cond ((=number? a1 0) a2)
         ((=number? a2 0) a1)
         ((and (number? a1) (number? a2)) (+ a1 a2))
-        ;我觉得有必要考虑到a2已经是(+ a3 a4)的形式
         (else (append (list a1 '+) a2))))
 
 (define (make-product m1 m2)
@@ -93,4 +90,3 @@
         ((product? m2) (append (list m1 '*) m2))
         (else (list m1 '* m2))
       ))
-
