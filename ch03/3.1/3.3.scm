@@ -1,0 +1,21 @@
+(define (make-account balance my-key)
+  (define (withdraw amount)
+    (if (>= balance amount)
+        (begin (set! balance (- balance amount)) balance)
+        "Insufficient funds"))
+  (define (depost amount)
+    (begin (set! balance (+ amount balance))
+    balance))
+  (define (show-message message)
+    "incorrect passord")
+  (define (dispatch key m)
+    (if (eq? key my-key)
+        (cond ((eq? m 'withdraw) withdraw)
+              ((eq? m 'depost) depost))
+        show-message
+        )
+    )
+  dispatch
+)
+
+(define acc (make-account 100 'key))
