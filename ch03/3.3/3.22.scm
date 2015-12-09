@@ -29,3 +29,4 @@
     dispatch))
 
 (define apple (make-queue))
+;这里我还是改进了下3.21提到的问题，毕竟看着不爽
