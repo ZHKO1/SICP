@@ -93,5 +93,3 @@
 ;((A 'insert-proc) 'a 'a2 'so)
 ;((A 'insert-proc) 'b 'b1 'doge)
 ;((A 'lookup-proc) 'b 'b1)
-
-
