@@ -27,16 +27,6 @@
             ((not (= value newval)) 
               (error "Contradiction" (list value newval)))
             (else 'ignored)))
-    (define (set-my-value newval setter)
-      (cond ((not (has-value? me))
-              (set! value newval)
-              (set! informant setter)
-              (for-each-except setter
-                               inform-about-value
-                               constraints))
-            ((not (= value newval)) 
-              (error "Contradiction" (list value newval)))
-            (else 'ignored)))
     (define (forget-my-value retractor)
       (if (eq? retractor informant)
           (begin (set! informant false)
