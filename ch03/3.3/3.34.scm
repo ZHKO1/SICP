@@ -1,6 +1,4 @@
 (load "ex_3.3.5.scm")
-;我觉得基本就是设定b a没法算出来
-;比如先给b赋值，然后再给a赋值，接着给出的解混乱了
 
 (define (multiplier m1 m2 product)
   (define (process-new-value)
@@ -31,7 +29,9 @@
   (define (process-forget-value)
     (forget-value! m1 me)
     (forget-value! m2 me)
-    (forget-value! product me))
+    (forget-value! product me)
+    (process-new-value)
+  )
   (define (me request)
     (cond ((eq? request 'have-a-value) (process-new-value))
           ((eq? request 'forget-a-value) (process-forget-value))
